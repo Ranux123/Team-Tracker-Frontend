@@ -6,3 +6,11 @@
   background-color: blue;
   color: white;
 }
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  margin-top: 0.5rem;
+}
