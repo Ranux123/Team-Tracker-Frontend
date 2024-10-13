@@ -4,16 +4,14 @@ import { Observable } from 'rxjs';
 import { Employee } from './employee';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeeService {
+  private baseURL = 'http://localhost:8080/api/manager/employees';
 
-  private baseURL = "http://localhost:8080/api/manager/employees"
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  getEmployeesList(): Observable<Employee[]>
-  {
+  getEmployeesList(): Observable<Employee[]> {
     return this.httpClient.get<Employee[]>(`${this.baseURL}`);
   }
 }
